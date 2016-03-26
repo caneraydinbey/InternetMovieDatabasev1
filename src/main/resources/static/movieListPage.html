@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head><script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="script.js"></script></head>
+<!--//<head>
+   // <script>
+
+      //  var app=angular.module('todoApp',[]);
+      //  app.controller('todoController',function($scope, $rootScope) {
+
+
+                //for (var i = 1; i <= 3; i++) {
+                 //  $rootScope.list = '1afsdasasda'
+           //         $rootScope.list= "asdasasda"
+                    //alert("Rabbit " + i + " out of the hat!");
+
+
+        //    }
+       // })
+
+    //</script>
+
+//</head>-->
+
+<body>
+<div class="main-container" ng-controller="todoController">
+    <div class="client-area">
+        <label fo.table-container tabler="txt"></label>
+
+         <input type="text" ng-model="title" placeholder="enter movie name here">
+        <input type="text" ng-model="actor" placeholder="enter movie actor here">
+        <!--<p>lsist :{{list}}</p>-->
+        <button ng-click="addMovie(title,actor)">Add Movie</button>
+        <table id="tab">
+            <thead>
+            <tr><th>Actors</th><th>ID</th><th>Name</th><th colspan="2">Options</th></tr>
+            </thead>
+            <tbody>
+
+
+            <tr ng-repeat="task in tasks">
+                <td ng-repeat="(key, val) in task">{{val}}   </td><td>
+
+                <button ng-click="editMovie(task.id)">Edit</button><button ng-click="deleteMovie(task.id)">Delete</button></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
